@@ -1,0 +1,88 @@
+{
+	"id": "74742284-1d29-432a-9813-32c105ab58bc",
+	"name": "Busca_de_Registros",
+	"timestamp": "2025-03-29T20:38:11.194Z",
+	"collection_id": "41827571-a252b30a-60f7-406d-9745-1cd074b5b125",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-03-29T20:38:10.576Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "00e59364-d50f-4828-8952-53e47e4c7dbf",
+			"name": "HTTP 400",
+			"url": "http://localhost:8000/buscar-registros",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "32339232-0ce9-4690-9675-2028b75e1ab1",
+			"name": "HTTP 404",
+			"url": "http://localhost:8000/buscar-registros?buscaTextual=Pindamonhangaba",
+			"time": 63,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				63
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "e8cab90d-2528-48ac-ade2-c94af067421a",
+			"name": "HTTP 200",
+			"url": "http://localhost:8000/buscar-registros?buscaTextual=administrador",
+			"time": 29,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				29
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 96,
+	"collection": {
+		"requests": [
+			{
+				"id": "00e59364-d50f-4828-8952-53e47e4c7dbf",
+				"method": "GET"
+			},
+			{
+				"id": "32339232-0ce9-4690-9675-2028b75e1ab1",
+				"method": "GET"
+			},
+			{
+				"id": "e8cab90d-2528-48ac-ade2-c94af067421a",
+				"method": "GET"
+			}
+		]
+	}
+}

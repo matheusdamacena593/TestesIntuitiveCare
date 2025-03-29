@@ -36,7 +36,7 @@
                                 <td>{{ registro.Nome_Fantasia }}</td>
                                 <td>{{ registro.Modalidade }}</td>
                                 <td>{{ registro.Logradouro }}</td>
-                                <td>{{ registro.Número }}</td>
+                                <td>{{ registro.Numero }}</td>
                                 <td>{{ registro.Complemento }}</td>
                                 <td>{{ registro.Bairro }}</td>
                                 <td>{{ registro.Cidade }}</td>
@@ -45,10 +45,10 @@
                                 <td>{{ registro.DDD }}</td>
                                 <td>{{ registro.Telefone }}</td>
                                 <td>{{ registro.Fax }}</td>
-                                <td>{{ registro.Endereço_Eletronico }}</td>
+                                <td>{{ registro.Endereco_eletronico }}</td>
                                 <td>{{ registro.Representante }}</td>
                                 <td>{{ registro.Cargo_Representante }}</td>
-                                <td>{{ registroRegiao_de_Comercializacao }}</td>
+                                <td>{{ registro.Regiao_de_Comercializacao }}</td>
                                 <td>{{ registro.Data_Registro_ANS }}</td>
                             </tr>
                         </tbody>
@@ -58,7 +58,7 @@
         </div>
 
         <div class="logo">
-            <img src="../assets/Logo_Matheus_Damacena_preto.png" class="logo" alt="">
+            <img src="../assets/Logo_Matheus_Damacena_preto.png" alt="Logo" class="img-fluid" />
         </div>
     </div>
 </template>
@@ -97,10 +97,7 @@ export default {
                     this.registros = response.data;
                 }
             } catch (error) {
-                this.buscaTextual = "";
-                this.carregando = false;
-
-                this.erro = error.response.data.detail;
+                this.erro = error.response ? error.response.data.detail : "Erro ao buscar registros.";
             } finally {
                 this.buscaTextual = "";
                 this.carregando = false;
@@ -123,9 +120,8 @@ body {
 }
 
 .logo {
-    text-align: right;
+    text-align: center;
     margin-top: auto;
-    margin-right: -40px;
 }
 
 .logo img {
